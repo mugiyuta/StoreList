@@ -1,0 +1,8 @@
+Options -Indexes
+Options +ExecCGI
+AddType application/x-httpd-cgi .cgi .pl .pm
+AddHandler cgi-script .py cgi pl pm
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /StoreList/index.cgi/$1 [QSA,L]
